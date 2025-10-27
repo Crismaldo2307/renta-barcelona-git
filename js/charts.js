@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const barCtx = document.getElementById('rentBarChart');
   const lineCtx = document.getElementById('correlationLineChart');
 
-  const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'];
-  const rentData = [780, 810, 860, 920, 990, 970, 1020, 1110, 1190];
+  const years = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+  const rentData = [720, 780, 810, 860, 920, 990, 970, 1020, 1110, 1190, 1255, 1330];
 
   const barChart = new Chart(barCtx, {
     type: 'bar',
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const tourismData = [18, 19.5, 21, 23, 25, 8, 12, 18, 20];
-  const commerceData = [105, 107, 110, 114, 118, 112, 116, 121, 127];
+  const tourismData = [16.5, 18, 19.5, 21, 23, 25, 8, 12, 18, 20, 21.5, 22.3];
+  const commerceData = [100, 105, 107, 110, 114, 118, 112, 116, 121, 127, 131, 136];
 
   const lineChart = new Chart(lineCtx, {
     type: 'line',

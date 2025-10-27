@@ -12,7 +12,7 @@
 </head>
 <body>
   <header class="navbar" aria-label="Menú principal">
-    <div class="nav-brand">Cristian y Alonso Data</div>
+    <div class="nav-brand">Cristhyan y Alonso Data</div>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
       <span></span>
       <span></span>
@@ -30,7 +30,10 @@
 
   <main>
     <section class="hero" aria-labelledby="video-intro">
-      <h1 id="video-intro">Desentrañando el alquiler en Barcelona</h1>
+      <div class="hero-content">
+        <h1 id="video-intro">Análisis del aumento del precio del alquiler en Barcelona</h1>
+        <p class="hero-summary">Exploramos cómo la vivienda en Barcelona ha incrementado sus precios entre 2014 y 2025, combinando indicadores de renta, turismo, comercio e inmigración para comprender la presión sobre el mercado.</p>
+      </div>
       <div class="video-container" role="region" aria-label="Video introductorio">
         <div style="position: relative; overflow: hidden; aspect-ratio: 1920/1080">
           <iframe src="https://share.synthesia.io/embeds/videos/26b3ea86-dac0-4435-91f5-f69ac75740c1"
@@ -88,6 +91,16 @@
       </div>
     </section>
 
+    <section class="looker-embed" aria-labelledby="looker-migracion">
+      <div class="section-header">
+        <h2 id="looker-migracion">Inmigración y renta media por distrito</h2>
+        <p>El siguiente reporte de Looker Studio muestra el mapa de Barcelona con el volumen estimado de población extranjera en cada distrito y el precio promedio de la renta, facilitando la identificación de zonas tensionadas.</p>
+      </div>
+      <div class="embed-responsive">
+        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/c5a6bcc0-6c30-4456-80f8-aaff3b1803af/page/WSHdF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </div>
+    </section>
+
     <section class="contact" id="contacto" aria-labelledby="contacto-titulo">
       <div class="section-header">
         <h2 id="contacto-titulo">Contacto</h2>
@@ -138,7 +151,7 @@
   </div>
 
   <footer class="footer">
-    <p>© 2025 Cristian y Alonso Data. Propietarios: Cristhyan Maldonado y Alonso Durand.</p>
+    <p>© 2025 Cristhyan y Alonso Data. Propietarios: Cristhyan Maldonado y Alonso Durand.</p>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-QVg0u5rTyKpT1VhcGJps3YBrYBqDga7rHx8vP2JpqtM=" crossorigin=""></script>
