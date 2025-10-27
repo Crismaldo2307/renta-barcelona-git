@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristian y Alonso Data – Análisis del incremento del precio de la renta en Barcelona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-o9N1j7kGStb2QkN8v+QJbzo3wJM6R2zY5jz0i0X+4nM=" crossorigin="">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="navbar" aria-label="Menú principal">
+    <div class="nav-brand">Cristian y Alonso Data</div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="busqueda.html">Búsqueda</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politica.html">Política de Datos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="video-intro">
+      <h1 id="video-intro">Desentrañando el alquiler en Barcelona</h1>
+      <div class="video-container" role="region" aria-label="Video introductorio">
+        <div style="position: relative; overflow: hidden; aspect-ratio: 1920/1080">
+          <iframe src="https://share.synthesia.io/embeds/videos/26b3ea86-dac0-4435-91f5-f69ac75740c1"
+            loading="lazy"
+            title="Synthesia video player - Desentrañando el Alquiler en Barcelona: Un Análisis de Datos Revelador"
+            allowfullscreen
+            allow="encrypted-media; fullscreen; microphone;"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; overflow:hidden;">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="descripcion-proyecto">
+      <div class="section-header">
+        <h2 id="descripcion-proyecto">Análisis integral del incremento de la renta</h2>
+        <p>Barcelona experimenta un incremento sostenido en los precios de la renta, impulsado por la demanda creciente de vivienda en zonas estratégicas. Nuestra investigación recopila fuentes oficiales, registros municipales y datos abiertos para comprender la magnitud y distribución de este fenómeno.</p>
+        <p>El turismo masivo y la expansión del comercio minorista generan presiones adicionales sobre el mercado de la vivienda. Con herramientas analíticas y modelos estadísticos, identificamos correlaciones entre la llegada de visitantes, el dinamismo empresarial y las variaciones en el coste de alquiler, revelando patrones que ayudan a tomar decisiones estratégicas.</p>
+      </div>
+    </section>
+
+    <section class="map-section" aria-labelledby="mapa-renta">
+      <div class="section-header">
+        <h2 id="mapa-renta">Mapa interactivo de renta media por distrito</h2>
+        <p>Explora los distritos de Barcelona y descubre cómo varían los precios de la renta. Cada marcador ofrece una renta media estimada basada en datos simulados.</p>
+      </div>
+      <div id="map" role="application" aria-label="Mapa de renta en Barcelona"></div>
+    </section>
+
+    <section class="charts" aria-labelledby="graficos-renta">
+      <div class="section-header">
+        <h2 id="graficos-renta">Evolución y correlaciones del mercado de alquiler</h2>
+        <p>Interactúa con los gráficos para visualizar la evolución del precio de la renta y su relación con el turismo y el comercio. Usa los controles para alternar las variables.</p>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-card" role="img" aria-label="Gráfico de barras del precio promedio de la renta por año">
+          <div class="chart-header">
+            <h3>Evolución anual del precio promedio</h3>
+            <div class="chart-controls">
+              <label><input type="checkbox" id="toggle-renta" checked> Renta</label>
+            </div>
+          </div>
+          <canvas id="rentBarChart"></canvas>
+        </div>
+        <div class="chart-card" role="img" aria-label="Gráfico de líneas correlación renta, turismo y comercio">
+          <div class="chart-header">
+            <h3>Correlación entre renta, turismo y comercio</h3>
+            <div class="chart-controls">
+              <label><input type="checkbox" id="toggle-turismo" checked> Turismo</label>
+              <label><input type="checkbox" id="toggle-comercio" checked> Comercio</label>
+            </div>
+          </div>
+          <canvas id="correlationLineChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="section-header">
+        <h2 id="contacto-titulo">Contacto</h2>
+        <p>Comparte tus preguntas o solicitudes de análisis personalizados. Responderemos con propuestas adaptadas a tu organización.</p>
+      </div>
+      <form class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+          <span class="error-message" id="error-name" role="alert" aria-live="assertive"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <span class="error-message" id="error-email" role="alert" aria-live="assertive"></span>
+        </div>
+        <div class="form-group">
+          <label for="company">Empresa</label>
+          <input type="text" id="company" name="company" autocomplete="organization">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <span class="error-message" id="error-message" role="alert" aria-live="assertive"></span>
+        </div>
+        <button type="submit" class="btn">Enviar mensaje</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <div class="chatbot" aria-live="polite">
+    <button class="chatbot-toggle" aria-expanded="false" aria-controls="chatbot-window" aria-label="Abrir chat">
+      <span>💬</span>
+    </button>
+    <div class="chatbot-window" id="chatbot-window" hidden>
+      <div class="chatbot-header">
+        <h2>Asistente IA</h2>
+        <button class="chatbot-close" aria-label="Cerrar chat">×</button>
+      </div>
+      <div class="chatbot-messages" role="log" aria-live="polite"></div>
+      <form class="chatbot-form">
+        <label for="chatbot-input" class="visually-hidden">Escribe tu mensaje</label>
+        <input type="text" id="chatbot-input" name="chatbot-input" placeholder="Escribe tu pregunta..." autocomplete="off">
+        <button type="submit" class="btn btn-secondary">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Cristian y Alonso Data. Propietarios: Cristhyan Maldonado y Alonso Durand.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-QVg0u5rTyKpT1VhcGJps3YBrYBqDga7rHx8vP2JpqtM=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" integrity="sha256-akCBvsRm7szACteBXh1lbnrfY7/ZrM1ptygPn9c8lUo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" integrity="sha384-ZNyaKOA1NVuMcZV8IOlkOKKarxs3JrBPlS0zjCczSGPPqOivc8l0YPSgRQzHwlsr" crossorigin="anonymous"></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/map.js" defer></script>
+  <script src="js/charts.js" defer></script>
+  <script src="js/email.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>
