@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda | Cristian y Alonso Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="navbar" aria-label="Menú principal">
+    <div class="nav-brand">Cristian y Alonso Data</div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="busqueda.html" class="active">Búsqueda</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politica.html">Política de Datos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="section" aria-labelledby="analisis-principal">
+      <div class="section-header">
+        <h1 id="analisis-principal">Análisis del incremento del precio de la renta en Barcelona</h1>
+        <p>Este análisis muestra la evolución del precio de la renta en Barcelona y su correlación con factores económicos, comerciales y turísticos.</p>
+      </div>
+      <div class="embed-responsive">
+        <iframe width="100%" height="600"
+          src="https://lookerstudio.google.com/embed/reporting/6f8344ee-b498-4dc4-97ea-25c805d8753f/page/CH8cF"
+          frameborder="0" style="border:0" allowfullscreen
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="proceso-bigquery">
+      <div class="section-header">
+        <h2 id="proceso-bigquery">Proceso requerido en BigQuery</h2>
+        <p>A continuación se visualiza el flujo de preparación y limpieza de datos desarrollado en BigQuery, representado mediante imágenes dentro del informe.</p>
+      </div>
+      <div class="embed-responsive">
+        <iframe width="100%" height="600"
+          src="https://lookerstudio.google.com/embed/reporting/d6df50f4-0553-46e7-98c7-12165385683e/page/p_zk1z2lckxd"
+          frameborder="0" style="border:0" allowfullscreen
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Cristian y Alonso Data. Propietarios: Cristhyan Maldonado y Alonso Durand.</p>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
